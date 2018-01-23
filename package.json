@@ -1,0 +1,27 @@
+{
+  "name": "alice-web",
+  "version": "0.0.1",
+  "description": "ALICE is a Conversational Bot that helps your business to retain customers, improve lead quality, boost business growth and drive sales at scale.",
+  "main": "index.js",
+  "scripts": {
+    "css": "npm-sass ./assets/sass/styles.scss > ./assets/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://sazzadsazib@bitbucket.org/xyzinnovation/alice-website.git"
+  },
+  "keywords": [
+    "CSS",
+    "HTML",
+    "JS"
+  ],
+  "author": "Sazzad Sazib",
+  "license": "MIT",
+  "dependencies": {
+    "html5-device-mockups": "^3.2.0",
+    "npm-sass": "^2.2.1",
+    "owl.carousel": "^2.2.0",
+    "smooth-scroll": "^12.1.5"
+  },
+  "devDependencies": {}
+}

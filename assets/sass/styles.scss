@@ -1,0 +1,56 @@
+/*!
+
+ =========================================================
+ * Style for Alice - v0.0.1
+ =========================================================
+
+ * Product Page: http://alice.tech
+ * Copyright 2018 misfit.tech (http://misfit.tech)
+ * Licensed under MIT
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */
+
+@import "styles/variables";
+@import "styles/mixins";
+
+@import "styles/typography";
+
+// Core CSS
+@import "styles/misc";
+@import "styles/buttons";
+@import "styles/inputs";
+@import "styles/progress-bars";
+@import "styles/sliders";
+@import "styles/alerts";
+@import "styles/labels";
+@import "styles/tooltips-and-popovers";
+@import "styles/sections";
+@import "styles/checkbox-radio";
+@import "styles/navbars";
+@import "styles/images";
+@import "styles/cards";
+@import "styles/footers";
+@import "styles/custom";
+
+
+// Bootstrap Switch
+@import "styles/bootstrap-switch";
+
+// Fancy Stuff
+@import "styles/dropdown";
+//
+// icons
+@import "styles/icons";
+//
+@import "styles/tabs-navs-pagination";
+@import "styles/collapse";
+@import "styles/carousel";
+@import "styles/modal";
+//
+@import "styles/responsive";
+@import "styles/plugins/datetimepicker";
+@import "styles/social-buttons";
+@import "styles/examples";
