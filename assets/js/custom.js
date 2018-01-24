@@ -25,7 +25,7 @@ $(document).ready(function(){
     });
 
 
-    // Animate loader off screen
+        // Animate loader off screen
     // PRE loader
     $(window).load(function(){
         $('.preloader').fadeOut(1000); // set duration in brackets

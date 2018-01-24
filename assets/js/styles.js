@@ -34,7 +34,7 @@ $(document).ready(function(){
         big_image = $('.page-header[data-parallax="true"]');
 
         if(big_image.length != 0){
-            $(window).on('scroll', pk.checkScrollForPresentationPage);
+           $(window).on('scroll', pk.checkScrollForPresentationPage);
         }
     }
 
@@ -67,9 +67,9 @@ $(document).ready(function(){
     $('.btn-tooltip').tooltip();
     $('.label-tooltip').tooltip();
 
-    // Carousel
-    $('.carousel').carousel({
-        interval: 4000
+	// Carousel
+	$('.carousel').carousel({
+      interval: 4000
     });
 
     $('.form-control').on("focus", function(){
@@ -135,17 +135,17 @@ pk = {
     }, 4),
 
     checkScrollForTransparentNavbar: debounce(function() {
-        if($(document).scrollTop() > $(".navbar").attr("color-on-scroll") ) {
-            if(transparent) {
-                transparent = false;
-                $('.navbar[color-on-scroll]').removeClass('navbar-transparent');
+        	if($(document).scrollTop() > $(".navbar").attr("color-on-scroll") ) {
+                if(transparent) {
+                    transparent = false;
+                    $('.navbar[color-on-scroll]').removeClass('navbar-transparent');
+                }
+            } else {
+                if( !transparent ) {
+                    transparent = true;
+                    $('.navbar[color-on-scroll]').addClass('navbar-transparent');
+                }
             }
-        } else {
-            if( !transparent ) {
-                transparent = true;
-                $('.navbar[color-on-scroll]').addClass('navbar-transparent');
-            }
-        }
     }, 17),
 
     initPopovers: function(){
@@ -153,7 +153,7 @@ pk = {
             $('body').append('<div class="popover-filter"></div>');
 
             //    Activate Popovers
-            $('[data-toggle="popover"]').popover().on('show.bs.popover', function () {
+           $('[data-toggle="popover"]').popover().on('show.bs.popover', function () {
                 $('.popover-filter').click(function(){
                     $(this).removeClass('in');
                     $('[data-toggle="popover"]').popover('hide');
@@ -172,64 +172,64 @@ pk = {
         });
 
         $('[data-toggle="pk-collapse"]').hover(function(){
-                var thisdiv = $(this).attr("data-target");
-                if(!$(this).hasClass('state-open')){
-                    $(this).addClass('state-hover');
-                    $(thisdiv).css({
-                        'height':'30px'
-                    });
-                }
-
-            },
-            function(){
-                var thisdiv = $(this).attr("data-target");
-                $(this).removeClass('state-hover');
-
-                if(!$(this).hasClass('state-open')){
-                    $(thisdiv).css({
-                        'height':'0px'
-                    });
-                }
-            }).click(function(event){
-            event.preventDefault();
-
             var thisdiv = $(this).attr("data-target");
-            var height = $(thisdiv).children('.panel-body').height();
-
-            if($(this).hasClass('state-open')){
+            if(!$(this).hasClass('state-open')){
+                $(this).addClass('state-hover');
                 $(thisdiv).css({
-                    'height':'0px',
+                    'height':'30px'
                 });
-                $(this).removeClass('state-open');
-            } else {
-                $(thisdiv).css({
-                    'height':height + 30,
-                });
-                $(this).addClass('state-open');
             }
-        });
+
+        },
+        function(){
+            var thisdiv = $(this).attr("data-target");
+            $(this).removeClass('state-hover');
+
+            if(!$(this).hasClass('state-open')){
+                $(thisdiv).css({
+                    'height':'0px'
+                });
+            }
+        }).click(function(event){
+                event.preventDefault();
+
+                var thisdiv = $(this).attr("data-target");
+                var height = $(thisdiv).children('.panel-body').height();
+
+                if($(this).hasClass('state-open')){
+                    $(thisdiv).css({
+                        'height':'0px',
+                    });
+                    $(this).removeClass('state-open');
+                } else {
+                    $(thisdiv).css({
+                        'height':height + 30,
+                    });
+                    $(this).addClass('state-open');
+                }
+            });
     },
     initSliders: function(){
         // Sliders for demo purpose in refine cards section
         if($('#sliderRegular').length != 0 ){
             var rangeSlider = document.getElementById('sliderRegular');
             noUiSlider.create(rangeSlider, {
-                start: [ 5000 ],
-                range: {
-                    'min': [  2000 ],
-                    'max': [ 10000 ]
-                }
+            	start: [ 5000 ],
+            	range: {
+            		'min': [  2000 ],
+            		'max': [ 10000 ]
+            	}
             });
         }
         if($('#sliderDouble').length != 0){
             var slider = document.getElementById('sliderDouble');
             noUiSlider.create(slider, {
-                start: [20, 80],
-                connect: true,
-                range: {
-                    'min': 0,
-                    'max': 100
-                }
+            	start: [20, 80],
+            	connect: true,
+            	range: {
+            		'min': 0,
+            		'max': 100
+            	}
             });
         }
     },
@@ -240,9 +240,9 @@ examples = {
     initContactUsMap: function(){
         var myLatlng = new google.maps.LatLng(44.433530, 26.093928);
         var mapOptions = {
-            zoom: 14,
-            center: myLatlng,
-            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+          zoom: 14,
+          center: myLatlng,
+          scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
         }
         var map = new google.maps.Map(document.getElementById("contactUsMap"), mapOptions);
 
@@ -253,7 +253,7 @@ examples = {
 
         // To add the marker to the map, call setMap();
         marker.setMap(map);
-    }
+        }
 }
 
 // Returns a function, that, as long as it continues to be invoked, will not
@@ -262,14 +262,14 @@ examples = {
 // leading edge, instead of the trailing.
 
 function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        }, wait);
-        if (immediate && !timeout) func.apply(context, args);
-    };
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		clearTimeout(timeout);
+		timeout = setTimeout(function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		}, wait);
+		if (immediate && !timeout) func.apply(context, args);
+	};
 };
